@@ -1,0 +1,34 @@
+openapi: 3.0.0
+info:
+  title: Therapy App API
+  description: API for managing therapy sessions, clients, and therapists.
+  version: "1.0.0"
+paths:
+  /clients:
+    post:
+      summary: Create a new client
+      operationId: createClient
+      requestBody:
+        description: Client data to create a new client
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Client'
+      responses:
+        '201':
+          description: Client created successfully
+        '400':
+          description: Invalid input
+components:
+  schemas:
+    Client:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        email:
+          type: string
+        password:
+       
